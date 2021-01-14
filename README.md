@@ -1,6 +1,6 @@
 # What is Lucy?
 
-Lucy is A modern, performant, compact, and async focused utility library.
+Lucy is a modern, performant, compact, and async focused utility library.
 It's built to provide all the little utility functions developers typically need.
 All main objects have some utility function available to it.
 Lucy is designed to be everything you may need except DOM related operations that you'll find in Acid Lucy's older brother.
