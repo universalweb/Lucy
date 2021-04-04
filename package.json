@@ -4,7 +4,7 @@
 	"version": "2.3.2",
 	"description": "A modern, performant, robust, asynchronous, and compact utility library.",
 	"bugs": {
-		"url": "https://github.com/tomekmarchi/Lucy/issues"
+		"url": "https://github.com/universalweb/Lucy/issues"
 	},
 	"homepage": "https://acidjs.com",
 	"directories": {
