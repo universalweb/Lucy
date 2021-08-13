@@ -1,13 +1,18 @@
 {
 	"extends": "eslint:recommended",
 	"env": {
-		"browser": false,
+		"browser": true,
 		"node": true,
 		"es6": true,
-		"serviceworker": false,
-		"worker": false
+		"serviceworker": true,
+		"worker": true
 	},
-	"globals": {},
+	"globals": {
+		"globalThis": false,
+		"window": false,
+		"top": false,
+		"Ractive": false
+	},
 	"parserOptions": {
 		"sourceType": "script",
 		"ecmaVersion": 12
@@ -19,9 +24,13 @@
 		"object-curly-newline": [
 			"error",
 			{
-				"ObjectExpression": "always",
+				"ObjectExpression": {
+					"multiline": true,
+					"minProperties": 1
+				},
 				"ObjectPattern": {
-					"multiline": true
+					"multiline": true,
+					"minProperties": 1
 				},
 				"ImportDeclaration": "never",
 				"ExportDeclaration": {
@@ -181,7 +190,7 @@
 		"no-mixed-requires": "error",
 		"no-new-require": "error",
 		"no-path-concat": "error",
-		"no-process-env": "error",
+		"no-process-env": "off",
 		"no-process-exit": "error",
 		"no-restricted-modules": "off",
 		"no-sync": "off",
@@ -210,7 +219,7 @@
 			"error",
 			"never"
 		],
-		"consistent-this": "error",
+		"consistent-this": "off",
 		"eol-last": "error",
 		"func-style": "off",
 		"id-blacklist": "off",

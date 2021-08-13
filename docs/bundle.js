@@ -1,7 +1,7 @@
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.$ = factory());
+  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.$ = factory());
 }(this, (function () { 'use strict';
 
   let cacheSuper;
@@ -142,16 +142,16 @@
    * // => 3
   */
   const objectSize = (target) => {
-    return keys(target).length;
+  	return keys(target).length;
   };
   assign($, {
-    assign,
-    defineProperty,
-    getOwnPropertyDescriptor,
-    getOwnPropertyNames,
-    is,
-    keys,
-    objectSize
+  	assign,
+  	defineProperty,
+  	getOwnPropertyDescriptor,
+  	getOwnPropertyNames,
+  	is,
+  	keys,
+  	objectSize
   });
 
   const arrayNative = Array;
@@ -188,7 +188,7 @@
   */
   const apply = Reflect.apply;
   assign($, {
-    apply
+  	apply
   });
 
   /**
@@ -993,15 +993,15 @@
     * // {a:1} 1
   */
   const asyncEach = async (callingArray, value) => {
-    const arrayLength = callingArray.length;
-    for (let index = 0; index < arrayLength; index++) {
-      const item = callingArray[index];
-      await item(value, index, callingArray, arrayLength);
-    }
-    return callingArray;
+  	const arrayLength = callingArray.length;
+  	for (let index = 0; index < arrayLength; index++) {
+  		const item = callingArray[index];
+  		await item(value, index, callingArray, arrayLength);
+  	}
+  	return callingArray;
   };
   assign($, {
-    asyncEach,
+  	asyncEach,
   });
 
   /**
@@ -1043,13 +1043,13 @@
     *  // => [1, 2, [3, [4]], 5]
   */
   const flatten = (arrayArg, level = 1) => {
-    let array = arrayArg;
-    for (let i = 0; i < level; i++) {
-      array = array.reduce((previousValue, currentValue) => {
-        return previousValue.concat(ensureArray(currentValue));
-      }, []);
-    }
-    return array;
+  	let array = arrayArg;
+  	for (let i = 0; i < level; i++) {
+  		array = array.reduce((previousValue, currentValue) => {
+  			return previousValue.concat(ensureArray(currentValue));
+  		}, []);
+  	}
+  	return array;
   };
   /**
     * Flattens an array to a single level.
@@ -1065,11 +1065,11 @@
     * // => [1, 2, 3, 4, 5]
   */
   const flattenDeep = (arrayToFlatten) => {
-    return arrayToFlatten.flat(Infinity);
+  	return arrayToFlatten.flat(Infinity);
   };
   assign($, {
-    flatten,
-    flattenDeep,
+  	flatten,
+  	flattenDeep,
   });
 
   /**
@@ -1145,21 +1145,21 @@
     * // => [[1],[2],[3]]
   */
   const chunk = (array, size = 1) => {
-    const chunked = [];
-    let index = 0;
-    array.forEach((item, key) => {
-      if (!(key % size)) {
-        chunked.push([]);
-        if (key) {
-          index++;
-        }
-      }
-      chunked[index].push(item);
-    });
-    return chunked;
+  	const chunked = [];
+  	let index = 0;
+  	array.forEach((item, key) => {
+  		if (!(key % size)) {
+  			chunked.push([]);
+  			if (key) {
+  				index++;
+  			}
+  		}
+  		chunked[index].push(item);
+  	});
+  	return chunked;
   };
   assign($, {
-    chunk,
+  	chunk,
   });
 
   /**
@@ -1196,11 +1196,11 @@
     * // => []
   */
   const clear = (array) => {
-    array.length = 0;
-    return array;
+  	array.length = 0;
+  	return array;
   };
   assign($, {
-    clear,
+  	clear,
   });
 
   /**
@@ -1260,7 +1260,7 @@
     * add(1, 1);
     * // => 2
   */
-  const add = (number, value) => {
+  const add$1 = (number, value) => {
     return number + value;
   };
   /**
@@ -1408,7 +1408,7 @@
     return floorMethod(randomMethod() * (max - min)) + min;
   };
   assign($, {
-    add,
+    add: add$1,
     deduct,
     divide,
     increment,
@@ -1519,12 +1519,12 @@
     * // => [1, 'B', 'Cat']
   */
   const compact = (array) => {
-    return array.filter((item) => {
-      return isString(item) && !item.length ? false : item;
-    });
+  	return array.filter((item) => {
+  		return isString(item) && !item.length ? false : item;
+  	});
   };
   assign($, {
-    compact,
+  	compact,
   });
 
   /**
@@ -1569,23 +1569,23 @@
   });
 
   const rangeUp = (start, end, increment) => {
-    const rangeArray = [];
-    let position = start;
-    while (position < end) {
-      rangeArray.push(position);
-      position += increment;
-    }
-    return rangeArray;
+  	const rangeArray = [];
+  	let position = start;
+  	while (position < end) {
+  		rangeArray.push(position);
+  		position += increment;
+  	}
+  	return rangeArray;
   };
   const rangeDown = (start, end, incrementArg) => {
-    const increment = (incrementArg < 0) ? incrementArg * -1 : incrementArg;
-    const rangeArray = [];
-    let position = start;
-    while (position > end) {
-      rangeArray.push(position);
-      position -= increment;
-    }
-    return rangeArray;
+  	const increment = (incrementArg < 0) ? incrementArg * -1 : incrementArg;
+  	const rangeArray = [];
+  	let position = start;
+  	while (position > end) {
+  		rangeArray.push(position);
+  		position -= increment;
+  	}
+  	return rangeArray;
   };
   /**
     * Create a numbered list of integers.
@@ -1602,14 +1602,14 @@
     * // => [0, 5, 10, 15, 20, 25]
   */
   const range = (start, end, increment = 1) => {
-    if (start < end) {
-      return rangeUp(start, end, increment);
-    } else {
-      return rangeDown(start, end, increment);
-    }
+  	if (start < end) {
+  		return rangeUp(start, end, increment);
+  	} else {
+  		return rangeDown(start, end, increment);
+  	}
   };
   assign($, {
-    range
+  	range
   });
 
   /**
@@ -1658,15 +1658,15 @@
     * // => [3]
   */
   const difference = (array, ...compares) => {
-    const compare = flattenDeep(compares);
-    return compactMapArray(array, (item) => {
-      if (!compare.includes(item)) {
-        return item;
-      }
-    });
+  	const compare = flattenDeep(compares);
+  	return compactMapArray(array, (item) => {
+  		if (!compare.includes(item)) {
+  			return item;
+  		}
+  	});
   };
   assign($, {
-    difference
+  	difference
   });
 
   /**
@@ -1837,11 +1837,11 @@
     * // 4 1
   */
   const eachAsync = async (callingArray, iteratee) => {
-    const arrayLength = callingArray.length;
-    for (let index = 0; index < arrayLength; index++) {
-      await iteratee(callingArray[index], index, callingArray, arrayLength);
-    }
-    return callingArray;
+  	const arrayLength = callingArray.length;
+  	for (let index = 0; index < arrayLength; index++) {
+  		await iteratee(callingArray[index], index, callingArray, arrayLength);
+  	}
+  	return callingArray;
   };
   /**
     * Asynchronously Iterates through the given array in reverse. Each async function is awaited as to ensure synchronous order.
@@ -1871,15 +1871,15 @@
     * // 3 1
   */
   const eachAsyncRight = async (callingArray, iteratee) => {
-    const arrayLength = callingArray.length;
-    for (let index = arrayLength - 1; index >= 0; index--) {
-      await iteratee(callingArray[index], index, callingArray, arrayLength);
-    }
-    return callingArray;
+  	const arrayLength = callingArray.length;
+  	for (let index = arrayLength - 1; index >= 0; index--) {
+  		await iteratee(callingArray[index], index, callingArray, arrayLength);
+  	}
+  	return callingArray;
   };
   assign($, {
-    eachAsync,
-    eachAsyncRight,
+  	eachAsync,
+  	eachAsyncRight,
   });
 
   /**
@@ -2039,18 +2039,18 @@
     * // => [1, 2, 3]
   */
   const compactMapAsync = async (array, iteratee) => {
-    const results = [];
-    let result;
-    await eachAsync(array, async (item, index, arrayLength) => {
-      result = await iteratee(item, index, results, arrayLength);
-      if (hasValue(result)) {
-        results.push(result);
-      }
-    });
-    return results;
+  	const results = [];
+  	let result;
+  	await eachAsync(array, async (item, index, arrayLength) => {
+  		result = await iteratee(item, index, results, arrayLength);
+  		if (hasValue(result)) {
+  			results.push(result);
+  		}
+  	});
+  	return results;
   };
   assign($, {
-    compactMapAsync,
+  	compactMapAsync,
   });
 
   const numericalCompare = (a, b) => {
@@ -2507,16 +2507,17 @@
     * // => {a: 2}
   */
   const countBy = (collection, iteratee) => {
-    const object = {};
-    let result;
-    eachArray(collection, (item) => {
-      result = iteratee(item);
-      if (!object[result]) {
-        object[result] = 0;
-      }
-      object[result]++;
-    });
-    return object;
+  	const object = {
+  	};
+  	let result;
+  	eachArray(collection, (item) => {
+  		result = iteratee(item);
+  		if (!object[result]) {
+  			object[result] = 0;
+  		}
+  		object[result]++;
+  	});
+  	return object;
   };
   /**
     * Count the amount of times a key is present in a colleciton.
@@ -2533,13 +2534,13 @@
     * // => 2
   */
   const countKey = (array, property) => {
-    let count = 0;
-    eachArray(array, (item) => {
-      if (item[property]) {
-        count++;
-      }
-    });
-    return count;
+  	let count = 0;
+  	eachArray(array, (item) => {
+  		if (item[property]) {
+  			count++;
+  		}
+  	});
+  	return count;
   };
   /**
     * Count the amount of times a key is not present in a colleciton.
@@ -2556,18 +2557,18 @@
     * // => 2
   */
   const countWithoutKey = (array, keyName) => {
-    let count = 0;
-    eachArray(array, (item) => {
-      if (!item[keyName]) {
-        count++;
-      }
-    });
-    return count;
+  	let count = 0;
+  	eachArray(array, (item) => {
+  		if (!item[keyName]) {
+  			count++;
+  		}
+  	});
+  	return count;
   };
   assign($, {
-    countBy,
-    countKey,
-    countWithoutKey
+  	countBy,
+  	countKey,
+  	countWithoutKey
   });
 
   /**
@@ -3656,7 +3657,7 @@
     timer,
   });
 
-  const add$1 = (link, methods) => {
+  const add = (link, methods) => {
     each(methods, (item, key) => {
       link.methods[key] = (...args) => {
         item(link.value, ...args);
@@ -3694,7 +3695,7 @@
     };
     assign(link, {
       add(addToChain) {
-        return add$1(link, addToChain);
+        return add(link, addToChain);
       },
       done() {
         const value = link.value;
@@ -4009,16 +4010,16 @@
     * // => ['Lucy', 'John']
   */
   const compactKeys = (object) => {
-    const keys = [];
-    eachObject(object, (item, key) => {
-      if (item) {
-        keys.push(key);
-      }
-    });
-    return keys;
+  	const compactedKeys = [];
+  	eachObject(object, (item, key) => {
+  		if (item) {
+  			compactedKeys.push(key);
+  		}
+  	});
+  	return compactedKeys;
   };
   assign($, {
-    compactKeys
+  	compactKeys
   });
 
   /**
@@ -4063,11 +4064,11 @@
     * // => { 'a': 1, 'b': 2 }
   */
   const zipObject = (properties, values) => {
-    const zipedObject = {};
-    eachArray(properties, (item, key) => {
-      zipedObject[item] = values[key];
-    });
-    return zipedObject;
+  	const zipedObject = {};
+  	eachArray(properties, (item, key) => {
+  		zipedObject[item] = values[key];
+  	});
+  	return zipedObject;
   };
   /**
     * Takes an array of grouped elements and creates an array regrouping the elements to their pre-zip object configuration.
@@ -4082,17 +4083,17 @@
     * // => [['a', 'b'], [1, 2]]
   */
   const unZipObject = (object) => {
-    const keys = [];
-    const values = [];
-    eachObject(object, (item, key) => {
-      keys.push(key);
-      values.push(item);
-    });
-    return [keys, values];
+  	const unZippedKeys = [];
+  	const values = [];
+  	eachObject(object, (item, key) => {
+  		unZippedKeys.push(key);
+  		values.push(item);
+  	});
+  	return [unZippedKeys, values];
   };
   assign($, {
-    unZipObject,
-    zipObject,
+  	unZipObject,
+  	zipObject,
   });
 
   /**
@@ -4249,7 +4250,7 @@
   });
 
   const normalizeCase = /[-_]/g;
-  const spaceFirstLetter = / (.)/g;
+  const spaceFirstLetter$1 = / (.)/g;
   /**
     * Converts a string and converts it entirely into uppercase.
     *
@@ -4283,7 +4284,7 @@
   */
   const camelCase = (string) => {
     return string.toLowerCase()
-      .replace(spaceFirstLetter, (match) => {
+      .replace(spaceFirstLetter$1, (match) => {
         return match.toUpperCase().replace(/ /g, '');
       });
   };
@@ -4304,7 +4305,7 @@
     return string.replace(normalizeCase, ' ')
       .trim()
       .toLowerCase()
-      .replace(spaceFirstLetter, '-$1');
+      .replace(spaceFirstLetter$1, '-$1');
   };
   /**
     * Converts a string into snake case format.
@@ -4323,7 +4324,7 @@
     return string.replace(normalizeCase, ' ')
       .trim()
       .toLowerCase()
-      .replace(spaceFirstLetter, '_$1');
+      .replace(spaceFirstLetter$1, '_$1');
   };
   assign($, {
     camelCase,
@@ -4626,7 +4627,7 @@
     truncateRight,
   });
 
-  const spaceFirstLetter$1 = / (.)/g;
+  const spaceFirstLetter = / (.)/g;
   /**
     * Returns the first letter capitalized.
     *
@@ -4673,7 +4674,7 @@
     * // => 'Lucy Is Next Up.'
   */
   const upperFirstAll = (string) => {
-    return string.replace(spaceFirstLetter$1, (match) => {
+    return string.replace(spaceFirstLetter, (match) => {
       return match.toUpperCase();
     });
   };
@@ -4707,7 +4708,7 @@
     * // => 'Lysergic Acid Diethylamide'
   */
   const upperFirstOnlyAll = (string) => {
-    return upperFirstOnly(string.toLowerCase()).replace(spaceFirstLetter$1, (match) => {
+    return upperFirstOnly(string.toLowerCase()).replace(spaceFirstLetter, (match) => {
       return match.toUpperCase();
     });
   };
@@ -4889,6 +4890,7 @@
 
   let count = 0;
   const uidFree = [];
+  const uidClosed = {};
   /**
     * Creates a numerical unique ID and recycles old ones. UID numerically ascends however freed UIDs are later reused.
     *
@@ -4913,6 +4915,7 @@
     let result = uidFree.shift(uidFree);
     if (!hasValue(result)) {
       result = count;
+      uidClosed[result] = true;
       count++;
     }
     return result;
@@ -4948,6 +4951,7 @@
     * // => 0
   */
   const free = (id) => {
+    uidClosed[id] = null;
     uidFree.push(id);
   };
   uid.free = free;
@@ -5094,7 +5098,7 @@
     toggle
   });
 
-  const returnFlow = (callable) => {
+  const returnFlow$1 = (callable) => {
     return (...methods) => {
       return (arg) => {
         let value = arg;
@@ -5118,7 +5122,7 @@
     * flow(increment, increment, deduct)(0);
     * // => 1
   */
-  const flow = returnFlow(eachArray);
+  const flow = returnFlow$1(eachArray);
   /**
     * This method is like flow except that it creates a function that invokes the given functions from right to left.
     *
@@ -5132,13 +5136,13 @@
     * flowRight(increment, increment, deduct)(0);
     * // => 1
   */
-  const flowRight = returnFlow(eachArrayRight);
+  const flowRight = returnFlow$1(eachArrayRight);
   assign($, {
     flow,
     flowRight,
   });
 
-  const returnFlow$1 = (callable) => {
+  const returnFlow = (callable) => {
     return (...methods) => {
       return async (arg) => {
         let value = arg;
@@ -5163,7 +5167,7 @@
     * flowAsync(async (item) => {return increment(item);}, async (item) => {return increment(item);})(0);
     * // => 2
   */
-  const flowAsync = returnFlow$1(eachAsync);
+  const flowAsync = returnFlow(eachAsync);
   /**
     * This method is like flow except that it creates a function that invokes the given functions from right to left.
     *
@@ -5178,7 +5182,7 @@
     * flowAsyncRight(async (item) => {return increment(item);}, async (item) => {return increment(item);})(0);
     * // => 2
   */
-  const flowAsyncRight = returnFlow$1(eachAsyncRight);
+  const flowAsyncRight = returnFlow(eachAsyncRight);
   assign($, {
     flowAsync,
     flowAsyncRight,
