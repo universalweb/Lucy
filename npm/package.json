@@ -1,40 +1,40 @@
 {
-	"name": "Lucy",
-	"company": "Universal Web, Inc",
-	"version": "2.3.3",
-	"description": "A modern, performant, robust, asynchronous, and compact utility library.",
-	"bugs": {
-		"url": "https://github.com/universalweb/Lucy/issues"
-	},
-	"homepage": "https://acidjs.com",
-	"directories": {
-		"doc": "docs",
-		"source": "source",
-		"build": "build",
-		"test": "tests"
-	},
-	"readme": "README.md",
-	"keywords": [
-		"Acid",
-		"utility",
-		"Lucy",
-		"Universal Web"
-	],
-	"license": "ISC",
-	"main": "index.js",
-	"maintainers": [
-		{
-			"email": "tom@universalweb.io",
-			"name": "Tom Marchi"
-		}
-	],
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/universalweb/Lucy.git"
-	},
-	"scripts": {
-		"build": "node index.js",
-		"test": "node test.js"
-	},
-	"dependencies": {}
+    "name": "Lucy",
+    "company": "Universal Web, Inc",
+    "version": "2.3.7",
+    "description": "A modern, performant, robust, asynchronous, and compact utility library.",
+    "bugs": {
+        "url": "https://github.com/universalweb/Lucy/issues"
+    },
+    "homepage": "https://acidjs.com",
+    "directories": {
+        "doc": "docs",
+        "source": "source",
+        "build": "build",
+        "test": "tests"
+    },
+    "readme": "README.md",
+    "keywords": [
+        "Acid",
+        "utility",
+        "Lucy",
+        "Universal Web"
+    ],
+    "license": "ISC",
+    "main": "index.js",
+    "maintainers": [
+        {
+            "email": "tom@universalweb.io",
+            "name": "Tom Marchi"
+        }
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/universalweb/Lucy.git"
+    },
+    "scripts": {
+        "build": "node index.js",
+        "test": "node test.js"
+    },
+    "dependencies": {}
 }

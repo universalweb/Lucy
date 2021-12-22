@@ -4,8 +4,8 @@
 		"browser": true,
 		"node": true,
 		"es6": true,
-		"serviceworker": true,
-		"worker": true
+		"serviceworker": false,
+		"worker": false
 	},
 	"globals": {
 		"globalThis": false,
@@ -35,7 +35,7 @@
 				"ImportDeclaration": "never",
 				"ExportDeclaration": {
 					"multiline": true,
-					"minProperties": 3
+					"minProperties": 1
 				}
 			}
 		],
@@ -219,7 +219,7 @@
 			"error",
 			"never"
 		],
-		"consistent-this": "off",
+		"consistent-this": "error",
 		"eol-last": "error",
 		"func-style": "off",
 		"id-blacklist": "off",
@@ -309,7 +309,7 @@
 		"no-spaced-func": "error",
 		"no-ternary": "off",
 		"no-trailing-spaces": "error",
-		"no-underscore-dangle": "error",
+		"no-underscore-dangle": "off",
 		"no-unneeded-ternary": "error",
 		"no-whitespace-before-property": "error",
 		"object-curly-spacing": [

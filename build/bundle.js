@@ -2,7 +2,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
   typeof define === 'function' && define.amd ? define(factory) :
   (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.$ = factory());
-}(this, (function () { 'use strict';
+})(this, (function () { 'use strict';
 
   let cacheSuper;
   /**
@@ -5190,5 +5190,5 @@
 
   return $;
 
-})));
+}));
 //# sourceMappingURL=bundle.js.map
