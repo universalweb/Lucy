@@ -11,7 +11,8 @@
 		"globalThis": false,
 		"window": false,
 		"top": false,
-		"Ractive": false
+		"Ractive": false,
+		"$": false
 	},
 	"parserOptions": {
 		"sourceType": "script",
@@ -115,7 +116,7 @@
 		"no-implicit-coercion": "error",
 		"no-implicit-globals": "error",
 		"no-implied-eval": "error",
-		"no-invalid-this": "error",
+		"no-invalid-this": "off",
 		"no-iterator": "error",
 		"no-labels": "error",
 		"no-lone-blocks": "error",
@@ -285,7 +286,7 @@
 		"new-cap": "error",
 		"new-parens": "error",
 		"newline-before-return": "off",
-		"newline-per-chained-call": "error",
+		"newline-per-chained-call": "off",
 		"no-array-constructor": "error",
 		"no-bitwise": "error",
 		"no-continue": "off",

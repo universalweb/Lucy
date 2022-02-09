@@ -13,12 +13,13 @@ import { isEqual } from './isEqual';
   * @returns {(string|number|Object|Array)} - The opposing value to the current.
   *
   * @example
-  * toggle(1, 2, 3);
-  * // => 2
+  * let toggleMe = true;
+  * toggleMe = toggle(toggleMe, true, false);
+  * // => false
 */
-export const toggle = (value, on, off) => {
-  return (isEqual(on, value)) ? off : on;
+export const toggle = (value, on = true, off = false) => {
+	return (isEqual(on, value)) ? off : on;
 };
 assign(acid, {
-  toggle
+	toggle
 });

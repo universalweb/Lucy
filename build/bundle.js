@@ -4735,20 +4735,20 @@
     * assignDeep({a:1}, {b:2})
     * // => {a:1, b:2}
   */
-  const assignDeep = (object, otherObject, mergeArrays = true) => {
-    each(otherObject, (item, key) => {
-      if (isPlainObject(item) && isPlainObject(object[key])) {
-        assignDeep(object[key], item, mergeArrays);
-      } else if (mergeArrays && isArray(item) && isArray(object[key])) {
-        object[key].push(...item);
-      } else {
-        object[key] = item;
-      }
-    });
-    return object;
+  const assignDeep = (target, source, mergeArrays = true) => {
+  	each(source, (item, key) => {
+  		if (isPlainObject(item) && isPlainObject(target[key])) {
+  			assignDeep(target[key], item, mergeArrays);
+  		} else if (mergeArrays && isArray(item) && isArray(target[key])) {
+  			target[key].push(...item);
+  		} else {
+  			target[key] = item;
+  		}
+  	});
+  	return target;
   };
   assign($, {
-    assignDeep
+  	assignDeep
   });
 
   const functionPrototype = Function.prototype;
@@ -4812,28 +4812,28 @@
      * // => true
    */
   const isEqual = (object, compareObject) => {
-    if (object === compareObject) {
-      return true;
-    } else if (object.toString() === compareObject.toString()) {
-      if (isPlainObject(object)) {
-        const sourceProperties = keys(object);
-        if (hasKeys(compareObject, sourceProperties)) {
-          return whileArray(sourceProperties, (key) => {
-            return isEqual(object[key], compareObject[key]);
-          });
-        }
-      } else if (isArray(object)) {
-        if (object.length === compareObject.length) {
-          return whileArray(object, (item, index) => {
-            return isEqual(item, compareObject[index]);
-          });
-        }
-      }
-    }
-    return false;
+  	if (object === compareObject) {
+  		return true;
+  	} else if (object.toString() === compareObject.toString()) {
+  		if (isPlainObject(object)) {
+  			const sourceProperties = keys(object);
+  			if (hasKeys(compareObject, sourceProperties)) {
+  				return whileArray(sourceProperties, (key) => {
+  					return isEqual(object[key], compareObject[key]);
+  				});
+  			}
+  		} else if (isArray(object)) {
+  			if (object.length === compareObject.length) {
+  				return whileArray(object, (item, index) => {
+  					return isEqual(item, compareObject[index]);
+  				});
+  			}
+  		}
+  	}
+  	return false;
   };
   assign($, {
-    isEqual,
+  	isEqual,
   });
 
   /**
@@ -4857,12 +4857,12 @@
     * // => true
   */
   const propertyMatch = (object, compareObject, properties = keys(object)) => {
-    return whileArray(properties, (property) => {
-      return isEqual(object[property], compareObject[property]);
-    });
+  	return whileArray(properties, (property) => {
+  		return isEqual(object[property], compareObject[property]);
+  	});
   };
   assign($, {
-    propertyMatch,
+  	propertyMatch,
   });
 
   const regexToPath = /\.|\[/;
@@ -5019,8 +5019,8 @@
    */
   const stringify = jsonNative.stringify;
   assign($, {
-    jsonParse,
-    stringify
+  	jsonParse,
+  	stringify
   });
 
   /**
@@ -5070,10 +5070,10 @@
     * // => Promise {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
   */
   const promise = (callback) => {
-    return new Promise(callback);
+  	return new Promise(callback);
   };
   assign($, {
-    promise
+  	promise
   });
 
   /**
@@ -5088,14 +5088,15 @@
     * @returns {(string|number|Object|Array)} - The opposing value to the current.
     *
     * @example
-    * toggle(1, 2, 3);
-    * // => 2
+    * let toggleMe = true;
+    * toggleMe = toggle(toggleMe, true, false);
+    * // => false
   */
-  const toggle = (value, on, off) => {
-    return (isEqual(on, value)) ? off : on;
+  const toggle = (value, on = true, off = false) => {
+  	return (isEqual(on, value)) ? off : on;
   };
   assign($, {
-    toggle
+  	toggle
   });
 
   const returnFlow$1 = (callable) => {
@@ -5143,15 +5144,15 @@
   });
 
   const returnFlow = (callable) => {
-    return (...methods) => {
-      return async (arg) => {
-        let value = arg;
-        await callable(methods, async (item) => {
-          value = await item(value);
-        });
-        return value;
-      };
-    };
+  	return (...methods) => {
+  		return async (arg) => {
+  			let value = arg;
+  			await callable(methods, async (item) => {
+  				value = await item(value);
+  			});
+  			return value;
+  		};
+  	};
   };
   /**
     * Creates a function that returns the result of invoking the given functions, where each successive invocation is supplied the return value of the previous.
@@ -5184,8 +5185,8 @@
   */
   const flowAsyncRight = returnFlow(eachAsyncRight);
   assign($, {
-    flowAsync,
-    flowAsyncRight,
+  	flowAsync,
+  	flowAsyncRight,
   });
 
   return $;

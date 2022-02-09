@@ -23,10 +23,10 @@ import { assign, keys } from '../internal/object';
   * // => true
 */
 export const propertyMatch = (object, compareObject, properties = keys(object)) => {
-  return whileArray(properties, (property) => {
-    return isEqual(object[property], compareObject[property]);
-  });
+	return whileArray(properties, (property) => {
+		return isEqual(object[property], compareObject[property]);
+	});
 };
 assign(acid, {
-  propertyMatch,
+	propertyMatch,
 });

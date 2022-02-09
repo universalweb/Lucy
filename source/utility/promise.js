@@ -22,8 +22,8 @@ import { assign } from '../internal/object';
   * // => Promise {[[PromiseStatus]]: "pending", [[PromiseValue]]: undefined}
 */
 export const promise = (callback) => {
-  return new Promise(callback);
+	return new Promise(callback);
 };
 assign(acid, {
-  promise
+	promise
 });
