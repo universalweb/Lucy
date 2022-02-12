@@ -12,7 +12,7 @@ import {
   * @param {Array} callingArray - Array of async functions that will be looped through.
   * Functions are given the supplied object, index, the calling array, and the array length.
   * @param {*} object - The first argument given to each function.
-  * @returns {Object} The originally given array.
+  * @returns {Object} - The originally given array.
   *
   * @test
   * (async () => {

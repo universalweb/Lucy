@@ -22,13 +22,13 @@ import { whileArray } from '../array/each';
   * // => 'c'
 */
 export const get = (propertyString, objectChain = acid) => {
-  let link = objectChain;
-  whileArray(toPath(propertyString), (item) => {
-    link = link[item];
-    return hasValue(link);
-  });
-  return link;
+	let link = objectChain;
+	whileArray(toPath(propertyString), (item) => {
+		link = link[item];
+		return hasValue(link);
+	});
+	return link;
 };
 assign(acid, {
-  get
+	get
 });

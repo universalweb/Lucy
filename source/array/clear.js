@@ -9,7 +9,7 @@ import {
   * @category Array
   * @type {Function}
   * @param {Array} array - Takes an array to be emptied.
-  * @returns {Array} The originally given array.
+  * @returns {Array} - The originally given array.
   *
   * @example
   * clear([1,'B', 'Cat']);

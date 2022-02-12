@@ -10,7 +10,7 @@ import { times } from '../array/times';
   * @type {Function}
   * @param {Function} callable - The function to be invoked.
   * @param {number} time - The time in milliseconds.
-  * @returns {Object} Returns setTimeout ID.
+  * @returns {Object} - Returns setTimeout ID.
   *
   * @example
   * timer(() => {}, 100);
@@ -28,7 +28,7 @@ export const timer = (callable, time) => {
   * @type {Function}
   * @param {Function} callable - The function to be invoked.
   * @param {number} time - The time in milliseconds.
-  * @returns {Object} Returns setInterval ID.
+  * @returns {Object} - Returns setInterval ID.
   *
   * @example
   * interval(() => {}, 100);
@@ -50,7 +50,7 @@ const generateClear = (callable, clearMethod) => {
   * @function clearTimers
   * @category function
   * @ignoreTest
-  * @returns {undefined} Returns undefined.
+  * @returns {undefined} - Returns undefined.
   *
   * @example
   * clearTimers();
@@ -63,7 +63,7 @@ export const clearTimers = generateClear(timer, clearTimeout);
   * @function clearIntervals
   * @category function
   * @ignoreTest
-  * @returns {undefined} Returns undefined.
+  * @returns {undefined} - Returns undefined.
   *
   * @example
   * clearIntervals();
@@ -79,7 +79,7 @@ export const clearIntervals = generateClear(interval, clearInterval);
   * @type {Function}
   * @param {Function} callable - The function to be invoked.
   * @param {number} time - The time in milliseconds.
-  * @returns {Function} The debounced function.
+  * @returns {Function} - The debounced function.
   *
   * @example
   * debounce(() => { console.log('debounced'); }, 0)();
@@ -113,7 +113,7 @@ export const debounce = (callable, time) => {
   * @type {Function}
   * @param {Function} callable - The function to be invoked.
   * @param {number} time - The time in milliseconds.
-  * @returns {Function} The throttled function.
+  * @returns {Function} - The throttled function.
   *
   * @example
   * throttle(() => { console.log('throttle'); }, 0)();
