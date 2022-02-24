@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { whileArray } from './each';
 /**
@@ -27,6 +27,6 @@ const sortedIndex = (array, insertThis) => {
   });
   return min;
 };
-assign(acid, {
+assign(namespace, {
   sortedIndex
 });

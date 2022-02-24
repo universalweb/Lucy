@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { eachArray } from '../array/each';
 /**
@@ -28,6 +28,6 @@ export const groupBy = (array, iteratee) => {
   });
   return sortedObject;
 };
-assign(acid, {
+assign(namespace, {
   groupBy
 });

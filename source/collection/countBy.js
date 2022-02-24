@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { eachArray } from '../array/each';
 /**
@@ -74,7 +74,7 @@ export const countWithoutKey = (array, keyName) => {
 	});
 	return count;
 };
-assign(acid, {
+assign(namespace, {
 	countBy,
 	countKey,
 	countWithoutKey

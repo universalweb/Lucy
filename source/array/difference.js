@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import {
 	assign
 } from '../internal/object';
@@ -30,6 +30,6 @@ export const difference = (array, ...compares) => {
 		}
 	});
 };
-assign(acid, {
+assign(namespace, {
 	difference
 });

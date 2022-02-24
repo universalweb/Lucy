@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { mapArray } from '../array/each';
 import { pluckObject } from '../object/pluckObject';
@@ -21,6 +21,6 @@ export const pluckValues = (collection, pluckThese) => {
     return pluckObject(item, pluckThese);
   });
 };
-assign(acid, {
+assign(namespace, {
   pluckValues
 });

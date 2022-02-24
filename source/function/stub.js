@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * This method returns a new empty object.
@@ -90,7 +90,7 @@ export const stubTrue = () => {
 export const noop = () => {
   return undefined;
 };
-assign(acid, {
+assign(namespace, {
   noop,
   stubArray,
   stubFalse,

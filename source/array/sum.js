@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * Reduces the values in an array into a single number.
@@ -18,6 +18,6 @@ const sum = (array) => {
     return a + b;
   }, 0);
 };
-assign(acid, {
+assign(namespace, {
   sum
 });

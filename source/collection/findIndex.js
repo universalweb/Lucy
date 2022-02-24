@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const findIndexCache = (element, index, array, indexMatch, propertyName) => {
   if (element[propertyName] === indexMatch) {
@@ -47,7 +47,7 @@ export const findIndex = (collection, id, propertyName = 'id') => {
   });
   return (result === -1) ? false : result;
 };
-assign(acid, {
+assign(namespace, {
   findIndex,
   findItem,
 });

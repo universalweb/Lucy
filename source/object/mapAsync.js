@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { eachObjectAsync } from './eachAsync';
 import { hasValue } from '../internal/is';
@@ -67,7 +67,7 @@ export const compactMapObjectAsync = async (object, iteratee, results = {}) => {
   });
   return results;
 };
-assign(acid, {
+assign(namespace, {
   compactMapObjectAsync,
   mapObjectAsync,
 });

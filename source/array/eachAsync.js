@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import {
 	assign
 } from '../internal/object';
@@ -70,7 +70,7 @@ export const eachAsyncRight = async (callingArray, iteratee) => {
 	}
 	return callingArray;
 };
-assign(acid, {
+assign(namespace, {
 	eachAsync,
 	eachAsyncRight,
 });

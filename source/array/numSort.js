@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 export const numericalCompare = (a, b) => {
   return a - b;
@@ -19,6 +19,6 @@ export const numericalCompare = (a, b) => {
 export const numSort = (numberList) => {
   return numberList.sort(numericalCompare);
 };
-assign(acid, {
+assign(namespace, {
   numSort
 });

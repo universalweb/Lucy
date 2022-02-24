@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { isFunction } from '../internal/is';
 /**
@@ -23,6 +23,6 @@ export const ifInvoke = (callable, ...args) => {
     return callable(...args);
   }
 };
-assign(acid, {
+assign(namespace, {
   ifInvoke
 });

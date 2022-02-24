@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign, objectSize } from './object';
 /**
  * Checks if the value is undefined.
@@ -6,14 +6,14 @@ import { assign, objectSize } from './object';
  * @function isUndefined
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isUndefined(undefined);
  * // => true
 */
 export const isUndefined = function(value) {
-  return value === undefined;
+	return value === undefined;
 };
 /**
  * Checks if the value is null.
@@ -21,14 +21,14 @@ export const isUndefined = function(value) {
  * @function isNull
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isNull(null);
  * // => true
 */
 export const isNull = (value) => {
-  return value === null;
+	return value === null;
 };
 /**
  * Checks if the value is not null or undefined.
@@ -36,19 +36,19 @@ export const isNull = (value) => {
  * @function hasValue
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * hasValue(1);
  * // => true
 */
 export const hasValue = (value) => {
-  return !isUndefined(value) && !isNull(value);
+	return !isUndefined(value) && !isNull(value);
 };
 export const isConstructor = (nativeObject) => {
-  return (obj) => {
-    return (hasValue(obj)) ? obj.constructor === nativeObject : false;
-  };
+	return (obj) => {
+		return (hasValue(obj)) ? obj.constructor === nativeObject : false;
+	};
 };
 export const decimalCheck = /\.|\+/;
 /**
@@ -57,14 +57,14 @@ export const decimalCheck = /\.|\+/;
  * @function isDecimal
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isDecimal(1.01);
  * // => true
 */
 export const isDecimal = (value) => {
-  return decimalCheck.test(value.toString());
+	return decimalCheck.test(value.toString());
 };
 /**
  * Checks if the value is an array.
@@ -72,7 +72,7 @@ export const isDecimal = (value) => {
  * @function isArray
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isArray([]);
@@ -85,7 +85,7 @@ export const isArray = Array.isArray;
  * @function isString
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isString('Lucy');
@@ -98,7 +98,7 @@ export const isString = isConstructor(String);
  * @function isNumber
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isNumber(1);
@@ -111,18 +111,18 @@ export const isNumber = isConstructor(Number);
  * @function isPlainObject
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isPlainObject({});
  * // => true
 */
 export const isPlainObject = (value) => {
-  if (hasValue(value)) {
-    return value.constructor.toString().trim()
-      .slice(9, 16) === 'Object(';
-  }
-  return false;
+	if (hasValue(value)) {
+		return value.constructor.toString().trim()
+			.slice(9, 16) === 'Object(';
+	}
+	return false;
 };
 /**
  * Checks if the value is a plain object.
@@ -130,14 +130,14 @@ export const isPlainObject = (value) => {
  * @function isFunction
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isFunction(() => {});
  * // => true
 */
 export const isFunction = (value) => {
-  return (hasValue(value)) ? value instanceof Function : false;
+	return (hasValue(value)) ? value instanceof Function : false;
 };
 /**
  * Checks if the value includes something.
@@ -146,14 +146,14 @@ export const isFunction = (value) => {
  * @category utility
  * @param {Array|String} value - Object to be checked.
  * @param {*} search - Object that is being searched for.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * has('My name is Acidjs', 'Acidjs');
  * // => true
 */
 export const has = (value, ...search) => {
-  return value.includes(...search);
+	return value.includes(...search);
 };
 /**
  * Checks if the value has length greater than 0.
@@ -161,14 +161,14 @@ export const has = (value, ...search) => {
  * @function hasLength
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * hasLength([1]);
  * // => true
 */
 export const hasLength = (value) => {
-  return Boolean(value.length);
+	return Boolean(value.length);
 };
 /**
  * Checks if the value is empty.
@@ -176,24 +176,24 @@ export const hasLength = (value) => {
  * @function isEmpty
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isEmpty([]);
  * // => true
 */
 export const isEmpty = (obj) => {
-  if (isString(obj) || isArray(obj)) {
-    return !hasLength(obj);
-  } else if (isPlainObject(obj)) {
-    return !objectSize(obj);
-  }
-  return !hasValue(obj);
+	if (isString(obj) || isArray(obj)) {
+		return !hasLength(obj);
+	} else if (isPlainObject(obj)) {
+		return !objectSize(obj);
+	}
+	return !hasValue(obj);
 };
 export const regexGenerator = (regexType) => {
-  return (item) => {
-    return (hasValue(item)) ? regexType.test(item) : false;
-  };
+	return (item) => {
+		return (hasValue(item)) ? regexType.test(item) : false;
+	};
 };
 /**
  * Checks if the string has a .css extension.
@@ -201,7 +201,7 @@ export const regexGenerator = (regexType) => {
  * @function isFileCSS
  * @category utility
  * @param {string} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isFileCSS('test.css');
@@ -214,7 +214,7 @@ export const isFileCSS = regexGenerator(/\.css$/);
  * @function isFileJSON
  * @category utility
  * @param {string} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isFileJSON('test.json');
@@ -227,7 +227,7 @@ export const isFileJSON = regexGenerator(/\.json$/);
  * @function isFileJS
  * @category utility
  * @param {string} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isFileJS('test.js');
@@ -240,7 +240,7 @@ export const isFileJS = regexGenerator(/\.js$/);
  * @function isFileHTML
  * @category utility
  * @param {string} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isFileHTML('test.html');
@@ -253,7 +253,7 @@ export const isFileHTML = regexGenerator(/\.html$/);
  * @function hasDot
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * hasDot('test.js');
@@ -274,10 +274,10 @@ export const getExtensionRegex = /\.([0-9a-z]+)/;
  * // => 'js'
 */
 export const getFileExtension = (string) => {
-  const match = string.match(getExtensionRegex);
-  if (match) {
-    return match[1];
-  }
+	const match = string.match(getExtensionRegex);
+	if (match) {
+		return match[1];
+	}
 };
 /**
  * Checks if the value is a RegExp.
@@ -285,14 +285,14 @@ export const getFileExtension = (string) => {
  * @function isRegExp
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isRegExp(/test/);
  * // => true
 */
 const isRegExp = (value) => {
-  return value instanceof RegExp;
+	return value instanceof RegExp;
 };
 /**
  * Checks if the value is an Arguments object.
@@ -300,7 +300,7 @@ const isRegExp = (value) => {
  * @function isArguments
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isArguments([]);
@@ -312,14 +312,14 @@ const isRegExp = (value) => {
  * @function isBoolean
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isBoolean(true);
  * // => true
 */
-const isBoolean = (value) => {
-  return value.constructor.name === 'Boolean';
+export const isBoolean = (value) => {
+	return value.constructor.name === 'Boolean';
 };
 /**
  * Checks if the value is a Date.
@@ -327,35 +327,103 @@ const isBoolean = (value) => {
  * @function isDate
  * @category utility
  * @param {*} value - Object to be checked.
- * @returns {boolean} - True or false.
+ * @returns {boolean} - Returns true or false.
  *
  * @example
  * isDate(new Date());
  * // => true
 */
 const isDate = (value) => {
-  return value instanceof Date;
+	return value instanceof Date;
 };
-assign(acid, {
-  getFileExtension,
-  has,
-  hasDot,
-  hasLength,
-  hasValue,
-  isArray,
-  isBoolean,
-  isDate,
-  isDecimal,
-  isEmpty,
-  isFileCSS,
-  isFileHTML,
-  isFileJS,
-  isFileJSON,
-  isFunction,
-  isNull,
-  isNumber,
-  isPlainObject,
-  isRegExp,
-  isString,
-  isUndefined,
+/**
+ * Checks if an object is a promise.
+ *
+ * @function isPromise
+ * @category utility
+ * @param {*} value - Object to be checked.
+ * @returns {boolean} - True or false.
+ *
+ * @example
+ * isPromise(new Promise(() => {}));
+ * // => true
+*/
+const isPromise = (value) => {
+	return value instanceof Promise;
+};
+/**
+ * Checks if an object is an async function.
+ *
+ * @function isAsync
+ * @category utility
+ * @param {*} value - Object to be checked.
+ * @returns {boolean} - True or false.
+ *
+ * @example
+ * isAsync(async() => {});
+ * // => true
+*/
+const isAsync = (value) => {
+	return value.constructor.name === 'AsyncFunction';
+};
+/**
+ * Checks if an object is an async function or promise.
+ *
+ * @function isKindAsync
+ * @category utility
+ * @param {*} value - Object to be checked.
+ * @returns {boolean} - True or false.
+ *
+ * @example
+ * isKindAsync(async() => {});
+ * // => true
+ * isKindAsync(new Promise(() => {}));
+ * // => true
+*/
+const isKindAsync = (value) => {
+	return isPromise(value) || isAsync(value);
+};
+/**
+ * Checks if an object is a primitive.
+ *
+ * @function isPrimitive
+ * @category utility
+ * @param {*} value - Object to be checked.
+ * @returns {boolean} - True or false.
+ *
+ * @example
+ * isPrimitive(1);
+ * // => true
+ * isPrimitive(() => {});
+ * // => false
+*/
+export const isPrimitive = (value) => {
+	return value !== '__proto__' && value !== 'constructor' && value !== 'prototype';
+};
+assign(namespace, {
+	isPrimitive,
+	getFileExtension,
+	has,
+	hasDot,
+	hasLength,
+	hasValue,
+	isArray,
+	isBoolean,
+	isDate,
+	isDecimal,
+	isEmpty,
+	isFileCSS,
+	isFileHTML,
+	isFileJS,
+	isFileJSON,
+	isFunction,
+	isNull,
+	isNumber,
+	isPlainObject,
+	isRegExp,
+	isString,
+	isUndefined,
+	isAsync,
+	isPromise,
+	isKindAsync
 });

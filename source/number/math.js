@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const mathNative = Math;
 const floorMethod = mathNative.floor;
@@ -164,7 +164,7 @@ export const randomArbitrary = (max, min = 0) => {
 export const randomInt = (max, min = 0) => {
   return floorMethod(randomMethod() * (max - min)) + min;
 };
-assign(acid, {
+assign(namespace, {
   add,
   deduct,
   divide,

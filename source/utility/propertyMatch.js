@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { isEqual } from './isEqual';
 import { whileArray } from '../array/each';
 import { assign, keys } from '../internal/object';
@@ -27,6 +27,6 @@ export const propertyMatch = (object, compareObject, properties = keys(object)) 
 		return isEqual(object[property], compareObject[property]);
 	});
 };
-assign(acid, {
+assign(namespace, {
 	propertyMatch,
 });

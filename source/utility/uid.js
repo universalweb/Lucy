@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { hasValue } from '../internal/is';
 let count = 0;
@@ -68,6 +68,6 @@ const free = (id) => {
   uidFree.push(id);
 };
 uid.free = free;
-assign(acid, {
+assign(namespace, {
   uid,
 });

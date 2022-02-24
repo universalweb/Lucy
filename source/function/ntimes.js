@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { hasValue } from '../internal/is';
 /**
@@ -111,7 +111,7 @@ const before = (amount, callable) => {
   };
   return onlyBefore;
 };
-assign(acid, {
+assign(namespace, {
   after,
   before,
   once

@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const truncateDown = (string, maxLength, stringLength) => {
   const breakAll = string.split('');
@@ -62,7 +62,7 @@ export const truncateRight = (string, maxLength) => {
   const stringLength = string.length;
   return (stringLength > maxLength) ? truncateUp(string, maxLength, stringLength) : string;
 };
-assign(acid, {
+assign(namespace, {
   truncate,
   truncateRight,
 });

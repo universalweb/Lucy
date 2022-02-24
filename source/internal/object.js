@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 const objectNative = Object;
 /**
  * Get object's keys.
@@ -103,7 +103,7 @@ export const getOwnPropertyNames = objectNative.getOwnPropertyNames;
 export const objectSize = (target) => {
 	return keys(target).length;
 };
-assign(acid, {
+assign(namespace, {
 	assign,
 	defineProperty,
 	getOwnPropertyDescriptor,

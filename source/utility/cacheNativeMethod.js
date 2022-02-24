@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const functionPrototype = Function.prototype;
 /**
@@ -17,6 +17,6 @@ const functionPrototype = Function.prototype;
 export function cacheNativeMethod(method) {
   return functionPrototype.call.bind(method);
 }
-assign(acid, {
+assign(namespace, {
   cacheNativeMethod
 });

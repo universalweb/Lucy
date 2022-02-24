@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { compactMapArray, eachArray, filterArray, mapArray, whileArray } from '../array/each';
 import { compactMapObject, eachObject, filterObject, mapObject, whileObject } from '../object/each';
@@ -120,7 +120,7 @@ export const map = generateCheckLoops(mapArray, mapObject);
   * // => {b: 2, c: 3}
 */
 export const compactMap = generateCheckLoops(compactMapArray, compactMapObject);
-assign(acid, {
+assign(namespace, {
   compactMap,
   each,
   eachWhile,

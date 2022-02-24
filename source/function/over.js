@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { eachWhile, map } from '../utility/each';
 /**
@@ -44,7 +44,7 @@ export const overEvery = (predicates) => {
     });
   };
 };
-assign(acid, {
+assign(namespace, {
   over,
   overEvery
 });

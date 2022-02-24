@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { whileArray } from '../array/each';
 import { assign, keys } from '../internal/object';
 /**
@@ -48,7 +48,7 @@ export const hasAnyKeys = (object, properties) => {
     return objectKeys.includes(item);
   }));
 };
-assign(acid, {
+assign(namespace, {
   hasAnyKeys,
   hasKeys,
 });

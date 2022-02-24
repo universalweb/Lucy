@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const mathNativeMin = Math.min;
 /**
@@ -17,6 +17,6 @@ const mathNativeMin = Math.min;
 export const smallest = (array) => {
   return mathNativeMin(...array);
 };
-assign(acid, {
+assign(namespace, {
   smallest
 });

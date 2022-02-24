@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { hasValue } from '../internal/is';
 /**
@@ -70,7 +70,7 @@ export const timesMap = (startIndex, endIndex, iteratee, results = []) => {
   });
   return results;
 };
-assign(acid, {
+assign(namespace, {
   times,
   timesMap,
 });

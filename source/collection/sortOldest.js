@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * Sorts an array in place using a key from oldest to newest.
@@ -47,7 +47,7 @@ export const sortOldest = (collection, key = 'id', pureMode = true) => {
 export const getOldest = (collection, key = 'id') => {
   return sortOldest(collection, key)[0];
 };
-assign(acid, {
+assign(namespace, {
   getOldest,
   sortOldest,
 });

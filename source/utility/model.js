@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { get } from './get';
 import { hasValue } from '../internal/is';
@@ -22,7 +22,7 @@ export const model = (modelName, object) => {
   }
   return get(modelName, model);
 };
-acid.superMethod(model);
-assign(acid, {
+namespace.superMethod(model);
+assign(namespace, {
   model
 });

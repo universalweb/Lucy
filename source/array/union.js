@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { flattenDeep } from './flatten';
 import { unique } from './unique';
@@ -18,6 +18,6 @@ import { unique } from './unique';
 export const union = (...arrays) => {
   return unique(flattenDeep(arrays));
 };
-assign(acid, {
+assign(namespace, {
   union
 });

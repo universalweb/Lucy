@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { isFunction } from '../internal/is';
 import { map } from '../utility/each';
@@ -24,6 +24,6 @@ export const bindAll = (collection, bindThis) => {
     return isFunction(item) ? item.bind(bindThis) : item;
   });
 };
-assign(acid, {
+assign(namespace, {
   bindAll
 });

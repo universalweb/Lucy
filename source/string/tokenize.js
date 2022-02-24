@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const tokenizeRegEx = /\S+/g;
 const wordsRegEx = /\w+/g;
@@ -33,7 +33,7 @@ export const tokenize = (string) => {
 export const words = (string) => {
   return string.match(wordsRegEx) || [];
 };
-assign(acid, {
+assign(namespace, {
   tokenize,
   words
 });

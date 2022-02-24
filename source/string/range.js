@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * Inserts text into a string at a given position.
@@ -95,7 +95,7 @@ export const initialString = (string, index = 1) => {
 export const restString = (string, index = 1) => {
   return string.substr(index);
 };
-assign(acid, {
+assign(namespace, {
   chunkString,
   initialString,
   insertInRange,

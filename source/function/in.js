@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { each } from '../utility/each';
 import { eachAsync } from '../array/eachAsync';
@@ -59,7 +59,7 @@ export const inAsync = async (collection, value) => {
     await item(value);
   });
 };
-assign(acid, {
+assign(namespace, {
   inAsync,
   inSync,
 });

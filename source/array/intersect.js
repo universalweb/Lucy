@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { compactMapArray, whileArray } from './each';
 /**
@@ -28,6 +28,6 @@ export const intersect = (array, ...arrays) => {
     }
   });
 };
-assign(acid, {
+assign(namespace, {
   intersect
 });

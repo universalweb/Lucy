@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { randomInt } from '../number/math';
 import { toArray } from '../internal/array';
@@ -37,6 +37,6 @@ export const shuffle = (array, amount = array.length) => {
   }
   return shuffleArray;
 };
-assign(acid, {
+assign(namespace, {
   shuffle
 });

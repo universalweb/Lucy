@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { compactMapArray } from './each';
 /**
@@ -34,6 +34,6 @@ export const partition = (array, funct) => {
     failed
   ];
 };
-assign(acid, {
+assign(namespace, {
   partition
 });

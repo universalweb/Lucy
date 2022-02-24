@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
    * Perform alphabetical sort on a collection with the provided key name. Mutates the array.
@@ -25,6 +25,6 @@ export const sortAlphabetical = (collection, key) => {
     return 0;
   });
 };
-assign(acid, {
+assign(namespace, {
   sortAlphabetical
 });

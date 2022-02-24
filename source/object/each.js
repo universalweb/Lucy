@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { hasValue } from '../internal/is';
 import { assign, keys } from '../internal/object';
 import { eachArray, whileArray } from '../array/each';
@@ -134,7 +134,7 @@ export const compactMapObject = (object, iteratee, results = {}) => {
   });
   return results;
 };
-assign(acid, {
+assign(namespace, {
   compactMapObject,
   eachObject,
   filterObject,

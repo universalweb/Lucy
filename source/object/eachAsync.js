@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { eachAsync } from '../array/eachAsync';
 import { assign, keys } from '../internal/object';
 /**
@@ -33,6 +33,6 @@ export const eachObjectAsync = async (thisObject, iteratee) => {
   });
   return thisObject;
 };
-assign(acid, {
+assign(namespace, {
   eachObjectAsync,
 });

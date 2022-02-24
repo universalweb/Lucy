@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * Merges together the values of each of the arrays with the values at the corresponding position.
@@ -40,7 +40,7 @@ export const unZip = (array) => {
     });
   });
 };
-assign(acid, {
+assign(namespace, {
   unZip,
   zip,
 });

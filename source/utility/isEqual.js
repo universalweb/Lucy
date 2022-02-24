@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { hasKeys } from '../object/hasKeys.js';
 import { whileArray } from '../array/each';
 import { assign, keys } from '../internal/object';
@@ -38,6 +38,6 @@ export const isEqual = (object, compareObject) => {
 	}
 	return false;
 };
-assign(acid, {
+assign(namespace, {
 	isEqual,
 });

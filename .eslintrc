@@ -337,7 +337,7 @@
 			"always"
 		],
 		"semi-spacing": "off",
-		"sort-vars": "error",
+		"sort-vars": "off",
 		"space-before-blocks": [
 			"error",
 			"always"
@@ -420,19 +420,7 @@
 		"prefer-template": "error",
 		"require-yield": "error",
 		"sort-keys": "off",
-		"sort-imports": [
-			"error",
-			{
-				"ignoreCase": true,
-				"ignoreMemberSort": false,
-				"memberSyntaxSortOrder": [
-					"single",
-					"multiple",
-					"all",
-					"none"
-				]
-			}
-		],
+		"sort-imports": "off",
 		"template-curly-spacing": [
 			"error",
 			"never"

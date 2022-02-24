@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { filterObject } from './each';
 /**
@@ -20,6 +20,6 @@ export const omit = (originalObject, array) => {
     return !array.includes(key);
   });
 };
-assign(acid, {
+assign(namespace, {
   omit
 });

@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * Removes all occurrences of the passed in items from the array and returns the array. This mutates the given array. Clone the array if you desire to avoid mutation.
@@ -53,7 +53,7 @@ export const removeBy = (array, iteratee) => {
   }
   return array;
 };
-assign(acid, {
+assign(namespace, {
   remove,
   removeBy
 });

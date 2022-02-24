@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const onlyUnique = (value, index, array) => {
   return array.indexOf(value) === index;
@@ -25,6 +25,6 @@ export const unique = (array, isSorted) => {
   }
   return array.filter(onlyUnique);
 };
-assign(acid, {
+assign(namespace, {
   unique
 });

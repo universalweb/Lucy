@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import {
 	assign
 } from '../internal/object';
@@ -34,6 +34,6 @@ export const compactMapAsync = async (array, iteratee) => {
 	});
 	return results;
 };
-assign(acid, {
+assign(namespace, {
 	compactMapAsync,
 });

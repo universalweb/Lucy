@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * Returns a shallow copy of the array up to an amount.
@@ -33,7 +33,7 @@ export const takeRight = (array, amount = 1) => {
   const arrayLength = array.length;
   return array.slice(arrayLength - amount, arrayLength);
 };
-assign(acid, {
+assign(namespace, {
   take,
   takeRight
 });

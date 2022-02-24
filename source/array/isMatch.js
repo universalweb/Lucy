@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { whileArray } from './each';
 /**
@@ -23,6 +23,6 @@ export const isMatchArray = (source, compareArray) => {
   }
   return false;
 };
-assign(acid, {
+assign(namespace, {
   isMatchArray,
 });

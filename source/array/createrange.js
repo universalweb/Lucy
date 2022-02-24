@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import {
 	assign
 } from '../internal/object';
@@ -42,6 +42,6 @@ export const range = (start, end, increment = 1) => {
 		return rangeDown(start, end, increment);
 	}
 };
-assign(acid, {
+assign(namespace, {
 	range
 });

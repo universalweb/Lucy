@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { eachArray } from '../array/each';
 import { hasValue } from './is';
 export const objectStringGenerate = (objectName) => {
@@ -167,13 +167,13 @@ export const isSameObjectGenerator = (type) => {
 */
 const nativeObjectNames = ['Arguments', 'Map', 'Set', 'WeakMap'];
 eachArray(nativeObjectNames, (item) => {
-  acid[`is${item}`] = isSameObjectGenerator(objectStringGenerate(item));
+  namespace[`is${item}`] = isSameObjectGenerator(objectStringGenerate(item));
 });
 const arrayLikeObjects = ['ArrayBuffer', 'Float32Array', 'Float64Array',
   'Int8Array', 'Int16Array', 'Int32Array', 'Uint8Array',
   'Uint8ClampedArray', 'Uint16Array', 'Uint32Array'];
 eachArray(arrayLikeObjects, (item) => {
-  acid[`is${item}`] = (value) => {
+  namespace[`is${item}`] = (value) => {
     return (hasValue(value)) ? value.constructor.name === item : false;
   };
 });

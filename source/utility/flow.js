@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { eachArray, eachArrayRight } from '../array/each';
 const returnFlow = (callable) => {
@@ -40,7 +40,7 @@ export const flow = returnFlow(eachArray);
   * // => 1
 */
 export const flowRight = returnFlow(eachArrayRight);
-assign(acid, {
+assign(namespace, {
   flow,
   flowRight,
 });

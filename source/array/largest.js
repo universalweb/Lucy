@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const mathNativeMax = Math.max;
 /**
@@ -17,6 +17,6 @@ const mathNativeMax = Math.max;
 export const largest = (array) => {
   return mathNativeMax(...array);
 };
-assign(acid, {
+assign(namespace, {
   largest
 });

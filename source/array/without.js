@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 /**
   * Returns a copy of the array with all instances of the values removed.
@@ -19,6 +19,6 @@ const without = (array, removeThese) => {
     return !removeThese.includes(item);
   });
 };
-assign(acid, {
+assign(namespace, {
   without
 });

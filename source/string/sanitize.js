@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 const rawURLDecodeRegex = /%(?![\da-f]{2})/gi;
 const andRegex = /&/g;
@@ -58,7 +58,7 @@ export const htmlEntities = (string) => {
 export const sanitize = (string) => {
   return htmlEntities(rawURLDecode(string));
 };
-assign(acid, {
+assign(namespace, {
   htmlEntities,
   rawURLDecode,
   sanitize

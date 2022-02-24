@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { clear } from '../array/clear';
 /**
@@ -58,7 +58,7 @@ export const curryRight = (callable, arity = callable.length) => {
   };
   return curried;
 };
-assign(acid, {
+assign(namespace, {
   curry,
   curryRight
 });

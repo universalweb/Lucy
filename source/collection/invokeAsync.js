@@ -1,4 +1,4 @@
-import acid from '../namespace/index';
+import namespace from '../namespace/index';
 import { assign } from '../internal/object';
 import { mapAsync } from '../array/mapAsync';
 /**
@@ -28,6 +28,6 @@ const invokeAsync = (collection, property, value) => {
     return item[property](value, index);
   });
 };
-assign(acid, {
+assign(namespace, {
   invokeAsync
 });
