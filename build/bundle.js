@@ -540,7 +540,10 @@
    * // => true
   */
   const isPromise = (value) => {
-  	return value instanceof Promise;
+  	if (value) {
+  		return value instanceof Promise;
+  	}
+  	return false;
   };
   /**
    * Checks if an object is an async function.
@@ -555,7 +558,10 @@
    * // => true
   */
   const isAsync = (value) => {
-  	return value.constructor.name === 'AsyncFunction';
+  	if (value) {
+  		return value.constructor?.name === 'AsyncFunction';
+  	}
+  	return false;
   };
   /**
    * Checks if an object is an async function or promise.
@@ -572,7 +578,10 @@
    * // => true
   */
   const isKindAsync = (value) => {
-  	return isPromise(value) || isAsync(value);
+  	if (value) {
+  		return isPromise(value) || isAsync(value);
+  	}
+  	return false;
   };
   /**
    * Checks if an object is a primitive.
@@ -831,12 +840,13 @@
   */
   const mapWhile = (source, iteratee, results = []) => {
   	const arrayLength = source.length;
-  	for (let index = 0; index < arrayLength; index++) {
-  		const returned = iteratee(source[index], index, results, source, arrayLength);
+  	for (let index = 0;index < arrayLength;index++) {
+  		const item = source[index];
+  		const returned = iteratee(item, index, results, source, arrayLength);
   		if (returned === false) {
   			break;
   		}
-  		results[index] = returned;
+  		results[index] = item;
   	}
   	return results;
   };
