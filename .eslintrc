@@ -1,22 +1,22 @@
 {
 	"extends": "eslint:recommended",
+	"parser": "@babel/eslint-parser",
 	"env": {
 		"browser": true,
 		"node": true,
 		"es6": true,
-		"serviceworker": false,
-		"worker": false
+		"serviceworker": true,
+		"worker": true
 	},
 	"globals": {
-		"globalThis": false,
-		"window": false,
-		"top": false,
-		"Ractive": false,
-		"$": false
+		"globalThis": "readonly",
+		"window": "readonly",
+		"top": "readonly",
+		"$": "writable"
 	},
 	"parserOptions": {
-		"sourceType": "script",
-		"ecmaVersion": 12
+		"sourceType": "module",
+		"ecmaVersion": "latest"
 	},
 	"rules": {
 		"no-setter-return": "error",
@@ -31,12 +31,15 @@
 				},
 				"ObjectPattern": {
 					"multiline": true,
-					"minProperties": 1
+					"minProperties": 2
 				},
-				"ImportDeclaration": "never",
+				"ImportDeclaration": {
+					"multiline": true,
+					"minProperties": 5
+				},
 				"ExportDeclaration": {
 					"multiline": true,
-					"minProperties": 1
+					"minProperties": 5
 				}
 			}
 		],
@@ -79,7 +82,7 @@
 		"no-unexpected-multiline": "error",
 		"no-unreachable": "error",
 		"use-isnan": "error",
-		"valid-jsdoc": "off",
+		"valid-jsdoc": 1,
 		"valid-typeof": "error",
 		"accessor-pairs": "error",
 		"array-callback-return": "error",
@@ -220,7 +223,7 @@
 			"error",
 			"never"
 		],
-		"consistent-this": "error",
+		"consistent-this": "off",
 		"eol-last": "error",
 		"func-style": "off",
 		"id-blacklist": "off",
@@ -286,7 +289,7 @@
 		"new-cap": "error",
 		"new-parens": "error",
 		"newline-before-return": "off",
-		"newline-per-chained-call": "off",
+		"newline-per-chained-call": "error",
 		"no-array-constructor": "error",
 		"no-bitwise": "error",
 		"no-continue": "off",
@@ -310,7 +313,7 @@
 		"no-spaced-func": "error",
 		"no-ternary": "off",
 		"no-trailing-spaces": "error",
-		"no-underscore-dangle": "off",
+		"no-underscore-dangle": "error",
 		"no-unneeded-ternary": "error",
 		"no-whitespace-before-property": "error",
 		"object-curly-spacing": [
@@ -420,7 +423,7 @@
 		"prefer-template": "error",
 		"require-yield": "error",
 		"sort-keys": "off",
-		"sort-imports": "off",
+		"sort-imports":"off",
 		"template-curly-spacing": [
 			"error",
 			"never"

@@ -15,5 +15,5 @@ const arrayNative = Array;
 */
 export const toArray = arrayNative.from;
 assign(namespace, {
-  toArray,
+	toArray,
 });

@@ -7,4 +7,5 @@ import './number/index';
 import './object/index';
 import './string/index';
 import './utility/index';
+import './class/index';
 export default namespace;
